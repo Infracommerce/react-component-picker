@@ -80,7 +80,7 @@ export type PickerPanelSharedProps<DateType> = {
   hideHeader?: boolean;
   /** @private This is internal usage. Do not use in your production env */
   onPickerValueChange?: (date: DateType) => void;
-
+  pickerRef: any;
   /** @private Internal usage. Do not use in your production env */
   components?: Components;
 };
@@ -148,6 +148,7 @@ function PickerPanel<DateType>(props: PickerPanelProps<DateType>) {
     hourStep = 1,
     minuteStep = 1,
     secondStep = 1,
+    pickerRef,
   } = props as MergedPickerPanelProps<DateType>;
 
   const needConfirmButton: boolean = (picker === 'date' && !!showTime) || picker === 'time';
@@ -230,6 +231,10 @@ function PickerPanel<DateType>(props: PickerPanelProps<DateType>) {
       onPickerValueChange(date);
     }
   };
+
+  React.useImperativeHandle(pickerRef, () => ({
+    setViewDate,
+  }));
 
   // Panel control
   const getInternalNextMode = (nextMode: PanelMode): PanelMode => {

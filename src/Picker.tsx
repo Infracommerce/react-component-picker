@@ -397,6 +397,7 @@ function InnerPicker<DateType>(props: PickerProps<DateType>) {
   let panelNode: React.ReactNode = (
     <PickerPanel<DateType>
       {...panelProps}
+      pickerRef={pickerRef}
       generateConfig={generateConfig}
       className={classNames({
         [`${prefixCls}-panel-focused`]: !typing,
