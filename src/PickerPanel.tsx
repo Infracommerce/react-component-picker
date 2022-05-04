@@ -152,7 +152,6 @@ function PickerPanel<DateType>(props: PickerPanelProps<DateType>) {
   } = props as MergedPickerPanelProps<DateType>;
 
   const needConfirmButton: boolean = (picker === 'date' && !!showTime) || picker === 'time';
-  console.log('pickerPanel');
   const isHourStepValid = 24 % hourStep === 0;
   const isMinuteStepValid = 60 % minuteStep === 0;
   const isSecondStepValid = 60 % secondStep === 0;
