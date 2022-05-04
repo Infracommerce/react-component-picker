@@ -362,20 +362,13 @@ function InnerPicker<DateType>(props: PickerProps<DateType>) {
   }, [mergedValue]);
 
   // ============================ Private ============================
-  if (pickerRef) {
-    pickerRef.current = {
-      focus: () => {
-        if (inputRef.current) {
-          inputRef.current.focus();
-        }
-      },
-      blur: () => {
-        if (inputRef.current) {
-          inputRef.current.blur();
-        }
-      },
+  React.useImperativeHandle(pickerRef, () => {
+    return {
+      setViewDate: pickerRef?.current?.setViewDate,
+      focus: inputRef?.current?.focus,
+      blur: inputRef?.current?.blur,
     };
-  }
+  });
 
   const [hoverValue, onEnter, onLeave] = useHoverValue(text, {
     formatList,
