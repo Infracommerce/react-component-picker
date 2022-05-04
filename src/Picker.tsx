@@ -38,6 +38,7 @@ import { legacyPropsWarning } from './utils/warnUtil';
 export type PickerRefConfig = {
   focus: () => void;
   blur: () => void;
+  setViewDate: () => void;
 };
 
 export type PickerSharedProps<DateType> = {
@@ -565,6 +566,12 @@ class Picker<DateType> extends React.Component<PickerProps<DateType>> {
   blur = () => {
     if (this.pickerRef.current) {
       this.pickerRef.current.blur();
+    }
+  };
+
+  setViewDate = () => {
+    if (this.pickerRef.current) {
+      this.pickerRef.current.setViewDate();
     }
   };
 

@@ -470,6 +470,12 @@ var Picker = /*#__PURE__*/function (_React$Component) {
       }
     };
 
+    _this.setViewDate = function () {
+      if (_this.pickerRef.current) {
+        _this.pickerRef.current.setViewDate();
+      }
+    };
+
     return _this;
   }
 

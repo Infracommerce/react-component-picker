@@ -17,6 +17,7 @@ import type { CustomFormat } from './interface';
 export declare type PickerRefConfig = {
     focus: () => void;
     blur: () => void;
+    setViewDate: () => void;
 };
 export declare type PickerSharedProps<DateType> = {
     dropdownClassName?: string;
@@ -77,6 +78,7 @@ declare class Picker<DateType> extends React.Component<PickerProps<DateType>> {
     pickerRef: React.RefObject<PickerRefConfig>;
     focus: () => void;
     blur: () => void;
+    setViewDate: () => void;
     render(): JSX.Element;
 }
 export default Picker;
