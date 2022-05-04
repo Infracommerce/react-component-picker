@@ -88,6 +88,7 @@ function InnerPicker(props) {
       autoComplete = _props$autoComplete === void 0 ? 'off' : _props$autoComplete,
       inputRender = props.inputRender;
   var inputRef = React.useRef(null);
+  console.log('Picker');
   var needConfirmButton = picker === 'date' && !!showTime || picker === 'time'; // ============================ Warning ============================
 
   if (process.env.NODE_ENV !== 'production') {

@@ -11,14 +11,14 @@ const defaultValue = moment('2019-11-28 01:02:03');
 
 export default () => {
   const [value, setValue] = React.useState<Moment | null>(defaultValue);
-  const ref = React.useRef(null)
-  console.log('ref', ref)
+  const pickerRef = React.useRef(null)
+
   const onSelect = (newValue: Moment) => {
     console.log('Select:', newValue);
   };
 
-  const onChange = (newValue: Moment | null, formatString?: string) => {
-    console.log('Change:', newValue, formatString);
+  const onChange = (newValue: Moment | null) => {
+    console.log('ref', pickerRef)
     setValue(newValue);
   };
 
@@ -36,7 +36,7 @@ export default () => {
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <div style={{ margin: '0 8px' }}>
           <h3>Basic</h3>
-          <Picker<Moment> ref={ref} {...sharedProps} locale={enUS} onChange={() => console.log(ref)} />
+          <Picker<Moment> ref={pickerRef} {...sharedProps} locale={enUS} onChange={() => console.log(pickerRef)} />
         </div>
       </div>
     </div>

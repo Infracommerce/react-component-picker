@@ -181,7 +181,7 @@ function InnerPicker<DateType>(props: PickerProps<DateType>) {
   } = props as MergedPickerProps<DateType>;
 
   const inputRef = React.useRef<HTMLInputElement>(null);
-
+  console.log('Picker');
   const needConfirmButton: boolean = (picker === 'date' && !!showTime) || picker === 'time';
 
   // ============================ Warning ============================
