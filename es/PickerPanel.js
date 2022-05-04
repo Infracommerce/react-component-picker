@@ -71,7 +71,6 @@ function PickerPanel(props) {
       secondStep = _props$secondStep === void 0 ? 1 : _props$secondStep,
       pickerRef = props.pickerRef;
   var needConfirmButton = picker === 'date' && !!showTime || picker === 'time';
-  console.log('pickerPanel');
   var isHourStepValid = 24 % hourStep === 0;
   var isMinuteStepValid = 60 % minuteStep === 0;
   var isSecondStepValid = 60 % secondStep === 0;
